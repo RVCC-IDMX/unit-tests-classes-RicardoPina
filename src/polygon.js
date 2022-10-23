@@ -28,29 +28,30 @@
  * @property {string} name - name of the polygon
  */
 class Polygon {
-  constructor(sides) {
-    // write your code here
+  constructor(sideArr) {
+    this.name = 'Polygon';
+    this.sides = sideArr;
   }
 
   /**
    * @returns {number} - number of sides
    */
   count() {
-    // write your code here
+    return this.sides.length;
   }
 
   /**
    * @returns {number} - value of the perimeter (sum of all sides)
    */
   perimeter() {
-    // write your code here
+    return this.sides.reduce((partialSum, a) => partialSum + a, 0);
   }
 
   /**
    * @returns {string} - name of the polygon
    */
   sayName() {
-    // write your code here
+    return `${this.name}`;
   }
 }
 
