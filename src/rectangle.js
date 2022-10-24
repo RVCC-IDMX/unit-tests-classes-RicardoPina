@@ -61,11 +61,11 @@ class Rectangle extends Polygon {
    * You'll need to use the height and width parameters to create
    * the array of 4 numbers
    */
-  constructor(heights, widths) {
-    super([heights, widths, heights, widths]);
+  constructor(height, width) {
+    super([height, height, width, width]);
     super.name = 'Rectangle';
-    this.height = heights;
-    this.width = widths;
+    this.height = height;
+    this.width = width;
   }
 
   /**
@@ -73,7 +73,7 @@ class Rectangle extends Polygon {
    * @returns {boolean} true if the height and width are both a number > 0
    */
   isValid() {
-    return this.height > 0 && this.width > 0;
+    return (this.height > 0) && (this.width > 0);
   }
 
   /**
@@ -83,7 +83,10 @@ class Rectangle extends Polygon {
    * otherwise return 0
    */
   area() {
-    return (this.height * this.width);
+    if (typeof this.height === 'number' && typeof this.width === 'number') {
+      return (this.height * this.width);
+    }
+    return 0;
   }
 }
 

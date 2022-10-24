@@ -28,9 +28,9 @@
  * @property {string} name - name of the polygon
  */
 class Polygon {
-  constructor(sideArr) {
+  constructor(sides) {
     this.name = 'Polygon';
-    this.sides = sideArr;
+    this.sides = sides;
   }
 
   /**
@@ -44,7 +44,13 @@ class Polygon {
    * @returns {number} - value of the perimeter (sum of all sides)
    */
   perimeter() {
-    return this.sides.reduce((partialSum, a) => partialSum + a, 0);
+    // return this.sides.reduce((partialSum, a) => partialSum + a, 0);
+    let sum = 0;
+    for (let i = 0; i < this.sides.length; i += 1) {
+      sum += this.sides[i];
+    }
+
+    return sum;
   }
 
   /**
